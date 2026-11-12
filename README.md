@@ -643,14 +643,18 @@ Version 2.0.0 introduces generic type support for better type safety. This chang
 ## Contributing
 
 ```bash
-$ npm install
+$ pnpm install
 $ git checkout -b YOUR_TOPIC_BRANCH
-$ npm test
-$ npm run build
+$ pnpm run lint
+$ pnpm run typecheck
+$ pnpm test
+$ pnpm run build
 $ git add ./
-$ git commit -m "YOUR UPDATE DESCRIPTION"
+$ git commit -m "feat: YOUR UPDATE DESCRIPTION"
 $ git push YOUR_ORIGIN YOUR_TOPIC_BRANCH
 ```
+
+Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `chore:`, ...). Releases are automated: merging to `main` runs semantic-release on CircleCI, which picks the next version from the commits, pushes the `v*` tag, publishes to npm and creates the GitHub Release. Do not bump `version` in `package.json` by hand.
 
 ## License
 
