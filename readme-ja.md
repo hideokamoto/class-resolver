@@ -313,14 +313,18 @@ console.log(result.handle('unknown')) // 出力: デフォルト: unknown
 ## 貢献
 
 ```bash
-$ npm install
+$ pnpm install
 $ git checkout -b YOUR_TOPIC_BRANCH
-$ npm test
-$ npm run build
+$ pnpm run lint
+$ pnpm run typecheck
+$ pnpm test
+$ pnpm run build
 $ git add ./
-$ git commit -m "YOUR UPDATE DESCRIPTION"
+$ git commit -m "feat: YOUR UPDATE DESCRIPTION"
 $ git push YOUR_ORIGIN YOUR_TOPIC_BRANCH
 ```
+
+コミットメッセージは [Conventional Commits](https://www.conventionalcommits.org/ja/) に従ってください（`feat:`、`fix:`、`chore:` など）。リリースは自動です。`main` にマージすると CircleCI の semantic-release がコミットから次のバージョンを決め、`v*` タグの push、npm への公開、GitHub Release の作成まで行います。`package.json` の `version` は手で上げないでください。
 
 ## サンプル
 
