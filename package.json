@@ -5,22 +5,21 @@
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
+        "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./dist/index.d.ts",
+        "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
     }
   },
   "files": ["dist"],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && node scripts/emit-cts-types.js",
     "verify-build": "node scripts/verify-build.js",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -51,6 +50,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hideokamoto/class-resolver.git"
+  },
+  "homepage": "https://github.com/hideokamoto/class-resolver#readme",
+  "bugs": {
+    "url": "https://github.com/hideokamoto/class-resolver/issues"
   },
   "engines": {
     "node": ">=14.0.0"
